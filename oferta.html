@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Planilha do Agricultor · Oferta de hoje</title>
+<title>Planilha do Agricultor · Preço de lançamento</title>
 <meta name="description" content="A planilha que mostra quanto custa, quanto rende e o que fazer esta semana na sua lavra. Excel e Google Sheets.">
 <meta name="theme-color" content="#14532d">
 <meta name="robots" content="noindex">
@@ -21,10 +21,10 @@
 </div></header>
 <main class="wrap">
  <div class="pricebox">
-  <span class="today">⚡ APENAS HOJE</span>
-  <div class="old">De <s>21.997 Kz</s></div>
+  <span class="today">🌱 PREÇO DE LANÇAMENTO</span>
+  <div class="old">Depois do lançamento: <s>21.997 Kz</s></div>
   <div class="new">7.997 <small>Kz</small></div>
-  <div class="save">Poupa 14.000 Kz · pagamento único</div>
+  <div class="save">Poupa 14.000 Kz enquanto durar o lançamento · pagamento único</div>
   <a class="btn" data-checkout href="#" style="margin-top:14px">QUERO A MINHA PLANILHA<small>Acesso imediato · Excel e Google Sheets</small></a>
   <p class="small" style="margin-top:8px">🔒 Pagamento seguro pela Okanda Pay · Garantia de 7 dias</p>
  </div>
@@ -52,7 +52,7 @@
  <details><summary>Os preços estão certos para a minha zona?</summary><p>Vêm com valores de referência de Angola (preços de referência da campanha 2025/2026 e preços do adubo de 2026). Troca-os pelos da sua zona em poucos minutos, e todas as contas se ajustam.</p></details>
  <details><summary>Pago uma vez ou todos os meses?</summary><p>Uma vez. A planilha é sua e serve para todas as campanhas.</p></details>
 
- <a class="btn" data-checkout href="#" style="margin:20px 0 6px">QUERO A MINHA PLANILHA · 7.997 Kz<small>Apenas hoje, em vez de 21.997 Kz</small></a>
+ <a class="btn" data-checkout href="#" style="margin:20px 0 6px">QUERO A MINHA PLANILHA · 7.997 Kz<small>Preço de lançamento · depois passa a 21.997 Kz</small></a>
 </main>
 <footer class="f"><div class="wrap"><nav><a href="termos.html">Termos</a><a href="privacidade.html">Privacidade</a><a data-wa href="#">WhatsApp</a></nav><p>© <span id="year">2026</span> A Bilonai Group. Produto independente, não afiliado a entidades públicas.</p></div></footer>
 
@@ -83,7 +83,7 @@
  }
  document.querySelector('.old s').textContent=kz(P.normal);
  document.querySelector('.new').innerHTML=kz(P.hoje).replace(' Kz',' <small>Kz</small>');
- document.querySelector('.save').textContent='Poupa '+kz(P.normal-P.hoje)+' · pagamento único';
+ document.querySelector('.save').textContent='Poupa '+kz(P.normal-P.hoje)+' enquanto durar o lançamento · pagamento único';
  var cp=Math.round(P.hoje*(1-P.desconto));
  document.getElementById('cprice').textContent=kz(cp);
  document.getElementById('ccode').textContent=C.cupao||'AGRO40';

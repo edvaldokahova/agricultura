@@ -5,7 +5,7 @@ Site estático (Vercel, sem base de dados):
 | Página | O que faz |
 |---|---|
 | `index.html` | Diagnóstico rápido (7 perguntas) → animação «a cruzar os seus dados» → resultado personalizado → botão para a oferta |
-| `oferta.html` | Oferta: 21.997 Kz riscado → 7.997 Kz, checkout Okanda em popup, cupão de 40% ao carregar em «voltar» |
+| `oferta.html` | Oferta: preço de lançamento 7.997 Kz (depois 21.997 Kz), checkout Okanda em popup, cupão de 40% ao carregar em «voltar» |
 | `obrigado.html` | Página para onde a Okanda redirecciona após o pagamento |
 | `termos.html`, `privacidade.html` | Páginas legais |
 
