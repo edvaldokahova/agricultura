@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Planilha do Agricultor · Oferta de hoje</title>
+<meta name="description" content="A planilha que mostra quanto custa, quanto rende e o que fazer esta semana na sua lavra. Excel e Google Sheets.">
+<meta name="theme-color" content="#14532d">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-exit>
+<header class="hero2"><div class="wrap">
+ <span class="tag" style="background:rgba(255,255,255,.12);color:#d6eedd;border-color:rgba(255,255,255,.3)">✓ A sua solução personalizada</span>
+ <h1 id="h">A planilha que faz as contas da sua lavra por si</h1>
+ <p class="lead" id="sub">Quanto vai gastar, quanto deve render, o preço mínimo para não perder e o que fazer esta semana. No telemóvel, em Kwanzas.</p>
+ <img class="box" src="assets/caixa.webp" alt="Planilha do Agricultor" width="230" height="345">
+</div></header>
+<main class="wrap">
+ <div class="pricebox">
+  <span class="today">⚡ APENAS HOJE</span>
+  <div class="old">De <s>21.997 Kz</s></div>
+  <div class="new">7.997 <small>Kz</small></div>
+  <div class="save">Poupa 14.000 Kz · pagamento único</div>
+  <a class="btn" data-checkout href="#" style="margin-top:14px">QUERO A MINHA PLANILHA<small>Acesso imediato · Excel e Google Sheets</small></a>
+  <p class="small" style="margin-top:8px">🔒 Pagamento seguro pela Okanda Pay · Garantia de 7 dias</p>
+ </div>
+
+ <div class="card"><h3>O que recebe</h3><ul class="list">
+  <li><b>Simulador «Vale a pena semear?»</b>: lucro esperado, colheita mínima e preço mínimo para não perder, com cenário de seca.</li>
+  <li><b>Agenda automática</b>: escreve a data de sementeira e aparecem a adubação, as sachas, os tratamentos e a colheita, com aviso «Esta semana».</li>
+  <li><b>Painel da campanha</b>: lucro por parcela e por cultura, custo real por kg, quem lhe deve e o que tem no armazém.</li>
+  <li><b>Dinheiro mês a mês</b>: vê com antecedência quando o dinheiro vai faltar antes da colheita.</li>
+  <li><b>10 culturas prontas</b>: milho, feijão, soja, arroz, amendoim, batata-rena, mandioca, tomate, cebola e repolho, com custos por hectare de referência.</li>
+  <li><b>Registo de 2 minutos</b>: gastos, diárias, colheita e vendas, com listas para escolher.</li>
+ </ul></div>
+
+ <div class="card"><h3>Como funciona</h3><ul class="fix">
+  <li><i>1</i><span>Paga e recebe a planilha no email logo a seguir.</span></li>
+  <li><i>2</i><span>Abre no Excel ou no Google Sheets (também no telemóvel) e escreve as suas parcelas.</span></li>
+  <li><i>3</i><span>Todos os dias, 2 minutos para apontar gastos. A planilha faz o resto.</span></li>
+ </ul></div>
+
+ <div class="guar"><b class="s">7</b><span><b>Garantia de 7 dias.</b> Se a planilha não for para si, devolvemos o dinheiro. Basta uma mensagem no WhatsApp, sem perguntas.</span></div>
+
+ <h3 style="margin:24px 0 4px;color:var(--g)">Perguntas rápidas</h3>
+ <details><summary>Preciso de computador?</summary><p>Não. Funciona no telemóvel com a aplicação Excel (gratuita) ou com o Google Sheets.</p></details>
+ <details><summary>E se a minha cultura não estiver na lista?</summary><p>Há linhas livres para acrescentar outras culturas com os seus custos e o seu calendário.</p></details>
+ <details><summary>Os preços estão certos para a minha zona?</summary><p>Vêm com valores de referência de Angola (preços de referência da campanha 2025/2026 e preços do adubo de 2026). Troca-os pelos da sua zona em poucos minutos, e todas as contas se ajustam.</p></details>
+ <details><summary>Pago uma vez ou todos os meses?</summary><p>Uma vez. A planilha é sua e serve para todas as campanhas.</p></details>
+
+ <a class="btn" data-checkout href="#" style="margin:20px 0 6px">QUERO A MINHA PLANILHA · 7.997 Kz<small>Apenas hoje, em vez de 21.997 Kz</small></a>
+</main>
+<footer class="f"><div class="wrap"><nav><a href="termos.html">Termos</a><a href="privacidade.html">Privacidade</a><a data-wa href="#">WhatsApp</a></nav><p>© <span id="year">2026</span> A Bilonai Group. Produto independente, não afiliado a entidades públicas.</p></div></footer>
+
+<!-- POPUP DO CUPÃO (aparece ao carregar em voltar) -->
+<div class="modal" id="cupao" hidden>
+ <div class="mbox coupon">
+  <button class="mx" data-close type="button" aria-label="Fechar">✕</button>
+  <span class="ribbon">ESPERE! ÚLTIMA OPORTUNIDADE</span>
+  <h2>Leve a planilha com mais <span style="color:var(--red)">40% de desconto</span></h2>
+  <p class="muted" style="margin-top:6px">Só nesta página. Se sair, o cupão desaparece.</p>
+  <div class="code" id="ccode">AGRO40</div>
+  <div class="p2"><s>7.997 Kz</s> → <b id="cprice">4.798 Kz</b></div>
+  <a class="btn amb" data-checkout="cupao" href="#" style="margin-top:14px">USAR O CUPÃO E COMPRAR<small id="chint">Escreva o código AGRO40 no pagamento</small></a>
+  <button class="no" data-close type="button">Não, prefiro continuar a fazer as contas de cabeça</button>
+ </div>
+</div>
+
+<script src="config.js"></script>
+<script>
+(function(){
+ var C=window.AGRO||{}, P=C.precos||{normal:21997,hoje:7997,desconto:.4};
+ function kz(v){return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' Kz'}
+ var N={milho:'milho',feijao:'feijão',batata:'batata-rena',horta:'hortícolas',mandioca:'mandioca',soja:'soja, amendoim ou arroz'};
+ var q=new URLSearchParams(location.search), c=q.get('c'), a=parseFloat(q.get('a')), n=(q.get('n')||'').replace(/[<>&"]/g,'');
+ if(c&&N[c]){
+   document.getElementById('h').textContent=(n?n+', a':'A')+' sua planilha para '+N[c]+' está pronta';
+   if(a) document.getElementById('sub').textContent='Já com a cultura de '+N[c]+' e os custos por hectare de Angola. Escreve os seus '+(a<1?'menos de 1':String(a).replace('.',','))+' ha e vê o lucro, a agenda e o preço mínimo de venda.';
+ }
+ document.querySelector('.old s').textContent=kz(P.normal);
+ document.querySelector('.new').innerHTML=kz(P.hoje).replace(' Kz',' <small>Kz</small>');
+ document.querySelector('.save').textContent='Poupa '+kz(P.normal-P.hoje)+' · pagamento único';
+ var cp=Math.round(P.hoje*(1-P.desconto));
+ document.getElementById('cprice').textContent=kz(cp);
+ document.getElementById('ccode').textContent=C.cupao||'AGRO40';
+ document.getElementById('chint').textContent=C.checkoutCupao?'O desconto já vem aplicado':'Escreva o código '+(C.cupao||'AGRO40')+' no pagamento';
+})();
+</script>
+<script src="site.js"></script>
+<script>if(window.track) track('ViewContent',{content_name:'Planilha do Agricultor',value:(window.AGRO&&AGRO.precos||{}).hoje||7997,currency:'AOA'});</script>
+</body>
+</html>

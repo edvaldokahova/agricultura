@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Diagnóstico grátis da sua lavra · Planilha do Agricultor</title>
+<meta name="description" content="Responda a 7 perguntas rápidas e veja quanto a sua lavra deve render, quanto custa e o preço mínimo para não perder dinheiro.">
+<meta name="theme-color" content="#14532d">
+<meta property="og:title" content="Quanto rende mesmo a sua lavra? Diagnóstico em 1 minuto">
+<meta property="og:image" content="assets/caixa.webp">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="wrap"><img src="favicon.png" alt=""><div>Planilha do Agricultor<small>Diagnóstico da lavra</small></div></div></header>
+
+<!-- 1. INTRO -->
+<section id="intro" class="intro"><div class="wrap">
+ <span class="tag">⏱ Formulário rápido · 1 minuto · grátis</span>
+ <h1>Quanto rende mesmo a sua lavra? Descubra antes de gastar no adubo.</h1>
+ <p class="lead">Responda a 7 perguntas rápidas. No fim, mostramos-lhe as contas da <b>sua</b> cultura e da <b>sua</b> área: quanto vai gastar, quanto deve render e o preço mínimo para não perder dinheiro.</p>
+ <div class="how"><div><b>7</b>perguntas rápidas</div><div><b>1</b>minuto</div><div><b>0 Kz</b>sem compromisso</div></div>
+ <button class="btn" id="start" type="button">COMEÇAR O DIAGNÓSTICO<small>Sem registo, sem email</small></button>
+ <p class="small" style="margin-top:12px;text-align:center">Usamos os preços de referência da campanha 2025/2026 e os custos típicos de Angola.</p>
+</div></section>
+
+<!-- 2. QUIZ -->
+<section id="quiz" class="quiz" hidden><div class="wrap">
+ <div class="prog"><i id="pbar"></i></div><div class="pstep" id="pstep">Pergunta 1 de 7</div>
+
+ <div class="q" data-k="cultura"><h2>O que produz mais?</h2><p class="h">Escolha a cultura principal.</p><div class="opts">
+  <button class="opt" data-v="milho"><span class="e">🌽</span><span>Milho</span></button>
+  <button class="opt" data-v="feijao"><span class="e">🫘</span><span>Feijão</span></button>
+  <button class="opt" data-v="batata"><span class="e">🥔</span><span>Batata-rena</span></button>
+  <button class="opt" data-v="horta"><span class="e">🍅</span><span>Hortícolas<small>tomate, cebola, repolho</small></span></button>
+  <button class="opt" data-v="mandioca"><span class="e">🌿</span><span>Mandioca</span></button>
+  <button class="opt" data-v="soja"><span class="e">🌱</span><span>Soja, amendoim ou arroz</span></button></div></div>
+
+ <div class="q" data-k="area"><h2>Quantos hectares semeia por campanha?</h2><p class="h">1 hectare = 100 m × 100 m (mais ou menos um campo de futebol e meio).</p><div class="opts two">
+  <button class="opt" data-v="0.5"><span>Menos de 1 ha</span></button><button class="opt" data-v="2"><span>1 a 3 ha</span></button>
+  <button class="opt" data-v="5"><span>3 a 10 ha</span></button><button class="opt" data-v="15"><span>Mais de 10 ha</span></button></div></div>
+
+ <div class="q" data-k="objetivo"><h2>O que faz com a colheita?</h2><div class="opts">
+  <button class="opt" data-v="vende"><span class="e">💰</span><span>Vendo quase tudo</span></button>
+  <button class="opt" data-v="parte"><span class="e">⚖️</span><span>Vendo uma parte e fico com outra</span></button>
+  <button class="opt" data-v="casa"><span class="e">🏠</span><span>É sobretudo para casa</span></button></div></div>
+
+ <div class="q" data-k="lucro"><h2>Sabe quanto lucrou na última campanha?</h2><div class="opts">
+  <button class="opt" data-v="sim"><span class="e">✅</span><span>Sim, sei o valor exacto</span></button>
+  <button class="opt" data-v="mais"><span class="e">🤔</span><span>Mais ou menos</span></button>
+  <button class="opt" data-v="nao"><span class="e">❓</span><span>Não faço ideia</span></button></div></div>
+
+ <div class="q" data-k="registo"><h2>Onde aponta os gastos da lavra?</h2><div class="opts">
+  <button class="opt" data-v="cabeca"><span class="e">🧠</span><span>De cabeça</span></button>
+  <button class="opt" data-v="caderno"><span class="e">📒</span><span>Num caderno</span></button>
+  <button class="opt" data-v="tele"><span class="e">📱</span><span>No telemóvel ou Excel</span></button>
+  <button class="opt" data-v="nada"><span class="e">🚫</span><span>Não aponto</span></button></div></div>
+
+ <div class="q" data-k="dor"><h2>O que mais lhe tira o sono?</h2><p class="h">Escolha a principal.</p><div class="opts">
+  <button class="opt" data-v="adubo"><span class="e">🧪</span><span>O adubo e as sementes estão caríssimos</span></button>
+  <button class="opt" data-v="preco"><span class="e">📉</span><span>Vendo e não sei se ganhei ou perdi</span></button>
+  <button class="opt" data-v="dinheiro"><span class="e">💸</span><span>O dinheiro acaba antes da colheita</span></button>
+  <button class="opt" data-v="tarefas"><span class="e">📅</span><span>Atraso a adubação e as sachas</span></button>
+  <button class="opt" data-v="chuva"><span class="e">🌧️</span><span>Tenho medo de um ano de pouca chuva</span></button></div></div>
+
+ <div class="q" data-k="nome"><h2>Para quem é o diagnóstico?</h2><p class="h">Só para personalizar o resultado. Não guardamos estes dados.</p>
+  <input class="txt" id="nome" type="text" placeholder="O seu primeiro nome" autocomplete="given-name" maxlength="30">
+  <select class="txt" id="prov"><option value="">Província (opcional)</option><option>Bengo</option><option>Benguela</option><option>Bié</option><option>Cabinda</option><option>Cuando</option><option>Cubango</option><option>Cuanza Norte</option><option>Cuanza Sul</option><option>Cunene</option><option>Huambo</option><option>Huíla</option><option>Icolo e Bengo</option><option>Luanda</option><option>Lunda Norte</option><option>Lunda Sul</option><option>Malanje</option><option>Moxico</option><option>Moxico Leste</option><option>Namibe</option><option>Uíge</option><option>Zaire</option></select>
+  <button class="btn" id="fim" type="button" style="margin-top:14px">VER O MEU DIAGNÓSTICO</button></div>
+
+ <button class="back" id="voltar" type="button">← Voltar</button>
+</div></section>
+
+<!-- 3. A CRUZAR DADOS -->
+<section id="anl" class="anl" hidden><div class="wrap">
+ <div class="spin"></div><h2>A cruzar os seus dados…</h2>
+ <div class="bar2"><i id="abar"></i></div>
+ <ul class="chk" id="steps"></ul>
+</div></section>
+
+<!-- 4. RESULTADO -->
+<section id="res" class="res" hidden><div class="wrap">
+ <span class="tag">✓ Diagnóstico pronto</span>
+ <h1 id="rtitle"></h1>
+ <p class="lead" id="rlead"></p>
+ <div class="card"><h3>A sua campanha em números</h3><div id="nums"></div><p class="small" style="margin-top:8px">Estimativa com valores de referência de Angola. Na planilha usa os seus preços reais.</p></div>
+ <div id="alerts"></div>
+ <div class="card"><h3>O que resolve o seu caso</h3><ul class="fix" id="fix"></ul></div>
+ <div class="card"><h3>Assim fica a sua lavra na planilha</h3>
+  <div class="phone"><div class="ph">
+   <div class="bar">▦ Simulador · <span id="mcul"></span></div><div id="msim"></div>
+   <div class="bar" style="margin-top:0">▦ Agenda · exemplo de uma campanha</div><div id="mag"></div>
+  </div></div></div>
+ <div class="card sol"><img src="assets/caixa.webp" alt="Planilha do Agricultor" width="120" height="180"><p><b>A Planilha do Agricultor</b> faz estas contas com os <b>seus</b> números, lembra-o de cada tarefa e mostra o lucro de cada parcela. Funciona no Excel e no Google Sheets, no telemóvel.</p></div>
+ <a class="btn amb" id="go" href="oferta.html" style="margin-top:18px">QUERO A MINHA PLANILHA<small>Ver a oferta de hoje</small></a>
+</div></section>
+
+<footer class="f"><div class="wrap"><nav><a href="termos.html">Termos</a><a href="privacidade.html">Privacidade</a><a data-wa href="#">WhatsApp</a></nav><p>© <span id="year">2026</span> A Bilonai Group. Produto independente, não afiliado a entidades públicas.</p></div></footer>
+<div class="sticky" id="sticky" hidden><a class="btn amb" id="go2" href="oferta.html">QUERO A MINHA PLANILHA</a></div>
+
+<script src="config.js"></script>
+<script>
+(function(){
+var D={
+ milho:{n:'milho',c:625000,y:3000,p:280,t:[['Preparar o terreno',-14],['Sementeira e NPK de fundo',0],['1.ª sacha e lagarta-do-cartucho',21],['Ureia de cobertura',35],['Colheita',130]],u:'kg'},
+ feijao:{n:'feijão',c:492500,y:900,p:650,t:[['Preparar o terreno',-10],['Sementeira e NPK de fundo',0],['1.ª sacha',15],['2.ª sacha e pragas',30],['Colheita',90]]},
+ batata:{n:'batata-rena',c:1710000,y:15000,p:250,t:[['Preparar o terreno e sulcos',-14],['Plantação e NPK',0],['1.ª amontoa e ureia',25],['Tratamento contra míldio',50],['Colheita',110]]},
+ horta:{n:'hortícolas (ex.: tomate)',c:1970000,y:20000,p:300,t:[['Viveiro',-30],['Transplante e NPK',0],['Tutorar',15],['Ureia e tratamento',30],['Início da colheita',70]]},
+ mandioca:{n:'mandioca',c:390000,y:10000,p:120,t:[['Preparar o terreno',-14],['Plantar as estacas',0],['1.ª sacha',30],['2.ª sacha',90],['Colheita (a partir de)',365]]},
+ soja:{n:'soja',c:516000,y:1800,p:320,t:[['Preparar o terreno',-14],['Sementeira e NPK',0],['1.ª sacha',20],['2.ª sacha e lagartas',40],['Colheita',120]]}
+};
+var A={}, qs=[].slice.call(document.querySelectorAll('.q')), i=0, $=function(id){return document.getElementById(id)};
+function kz(v){return (v<0?'−':'')+Math.round(Math.abs(v)).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' Kz'}
+function n0(v){return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')}
+function show(k){qs.forEach(function(q,j){q.classList.toggle('on',j===k)}); $('pbar').style.width=Math.round(100*k/qs.length)+'%'; $('pstep').textContent='Pergunta '+(k+1)+' de '+qs.length; $('voltar').style.visibility=k?'visible':'hidden'; window.scrollTo(0,0)}
+$('start').onclick=function(){$('intro').hidden=true;$('quiz').hidden=false;show(0); if(window.track)track('IniciouDiagnostico',{},true)};
+qs.forEach(function(q){q.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){
+  q.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel')}); b.classList.add('sel');
+  A[q.getAttribute('data-k')]=b.getAttribute('data-v'); setTimeout(function(){i++;show(i)},220);}})});
+$('voltar').onclick=function(){if(i>0){i--;show(i)}};
+$('fim').onclick=function(){A.nome=($('nome').value||'').trim().split(' ')[0]; A.prov=$('prov').value; $('quiz').hidden=true; analisar()};
+function analisar(){
+  var d=D[A.cultura]||D.milho, a=+A.area||1;
+  $('anl').hidden=false; window.scrollTo(0,0);
+  var S=['A ler as suas respostas',
+   'A calcular o custo por hectare de '+d.n+' em Angola'+(A.prov?' ('+A.prov+')':''),
+   'A comparar com o preço de referência: '+n0(d.p)+' Kz/kg',
+   'A projectar '+n0(a)+' ha numa campanha normal',
+   'A simular um ano de pouca chuva',
+   'A calcular o preço mínimo para não perder',
+   'A montar a sua solução'];
+  $('steps').innerHTML=S.map(function(s){return '<li><i>✓</i>'+s+'</li>'}).join('');
+  var li=$('steps').children, k=0, T=S.length, dur=6200, t0=Date.now();
+  var iv=setInterval(function(){var p=Math.min(1,(Date.now()-t0)/dur); $('abar').style.width=Math.round(p*100)+'%';
+    while(k<T&&p>=(k+1)/T){li[k].classList.add('ok');k++}
+    if(p>=1){clearInterval(iv);setTimeout(resultado,350)}},80);
+}
+function resultado(){
+  var d=D[A.cultura]||D.milho, a=+A.area||1, nome=A.nome?A.nome+', ':'';
+  var custo=d.c*a, prod=d.y*a, rec=prod*d.p, lucro=rec-custo, seca=prod*0.5*d.p-custo, pmin=d.c/d.y, ymin=d.c/d.p, fam=(1000/3000);
+  $('anl').hidden=true; $('res').hidden=false; window.scrollTo(0,0);
+  $('rtitle').textContent=(A.nome?A.nome+', este':'Este')+' é o diagnóstico da sua lavra de '+d.n;
+  $('rlead').textContent='Para '+(a<1?'cerca de meio hectare':n0(a)+' ha')+', com os custos e preços de referência de Angola, as contas são estas:';
+  $('nums').innerHTML=[
+   ['Vai gastar (sementes, adubo, trabalho, tractor…)',kz(custo)],
+   ['Deve colher, num ano normal',n0(prod)+' kg ('+n0(prod/50)+' sacos)'],
+   ['Vale, ao preço de referência',kz(rec)],
+   ['Lucro esperado num ano normal',kz(lucro),'big'],
+   ['Preço mínimo para não perder',kz(pmin).replace(' Kz',' Kz/kg')],
+   ['Colheita mínima para não perder',n0(ymin*a)+' kg']
+  ].map(function(r){return '<div class="kv '+(r[2]||'')+'"><span>'+r[0]+'</span><b'+(r[1].charAt(0)==='−'?' class="neg"':'')+'>'+r[1]+'</b></div>'}).join('');
+  var al='';
+  if(seca<0) al+='<div class="alert">⚠️ <b>Num ano de pouca chuva</b> (metade da colheita), a mesma lavra dá um <b>prejuízo de '+kz(-seca).replace('−','')+'</b>. Saber isto antes de comprar o adubo muda a decisão.</div>';
+  if(A.cultura==='milho') al+='<div class="alert">⚠️ Na agricultura familiar, a média nacional do milho é cerca de <b>1 tonelada por hectare</b>. Com 1 t/ha, cada hectare vale só '+kz(1000*d.p)+', menos de metade do que custa uma lavra bem adubada ('+kz(d.c)+'). Quem investe em adubo tem de colher bem acima da média para compensar.</div>';
+  if(A.lucro!=='sim'||A.registo==='cabeca'||A.registo==='nada') al+='<div class="alert">⚠️ Disse que '+(A.lucro==='nao'?'não sabe quanto lucrou':A.lucro==='mais'?'só sabe mais ou menos o que lucrou':'aponta os gastos '+(A.registo==='cabeca'?'de cabeça':'pouco'))+'. É assim que o dinheiro sai em pequenos gastos (diárias, transporte, sacos) que ninguém soma.</div>';
+  if(lucro>0&&!al) al+='<div class="good">✅ A sua cultura compensa num ano normal. O ganho está em controlar os gastos e vender acima de '+kz(pmin).replace(' Kz',' Kz/kg')+'.</div>';
+  $('alerts').innerHTML=al;
+  var F={adubo:'O <b>Simulador</b> mostra, antes de comprar, se o adubo se paga com o seu preço de venda.',preco:'O <b>Painel</b> mostra o lucro de cada parcela e o custo real por kg. Nunca mais vende abaixo do custo.',dinheiro:'O <b>dinheiro mês a mês</b> avisa quando vai faltar dinheiro antes da colheita, a tempo de pedir crédito.',tarefas:'A <b>Agenda automática</b> cria as tarefas a partir da data de sementeira e avisa: «Esta semana», «Atrasada».',chuva:'A <b>tabela «e se?»</b> mostra o lucro num ano normal, fraco e de seca, antes de semear.'};
+  var order=[A.dor||'preco'].concat(['preco','tarefas','dinheiro','adubo','chuva'].filter(function(x){return x!==A.dor})).slice(0,4);
+  $('fix').innerHTML=order.map(function(k,j){return '<li><i>'+(j+1)+'</i><span>'+F[k]+'</span></li>'}).join('')+'<li><i>5</i><span>Registo de <b>2 minutos por dia</b>: gastos, dias de trabalho, colheita e vendas, com listas para escolher.</span></li>';
+  $('mcul').textContent=d.n+' · '+n0(a)+' ha';
+  $('msim').innerHTML=[['Investimento',kz(custo)],['Receita esperada',kz(rec)],['Lucro esperado',kz(lucro),'t'],['Ano de seca (−50%)',kz(seca)]].map(function(r){return '<div class="row '+(r[2]||'')+'"><span>'+r[0]+'</span><b'+(r[1].charAt(0)==='−'?' style="color:#c0392b"':'')+'>'+r[1]+'</b></div>'}).join('');
+  var st=['g','g','y','',''], lb=['✓ Feita','✓ Feita','Esta semana','Este mês','Mais tarde'];
+  $('mag').innerHTML=d.t.map(function(t,j){return '<div class="tsk"><span>'+t[0]+'</span><span class="pill '+(st[j]||'')+'" style="'+(st[j]?'':'background:#eef3ef;color:#5b6b62')+'">'+lb[j]+'</span></div>'}).join('');
+  var qsx='?c='+encodeURIComponent(A.cultura||'milho')+'&a='+encodeURIComponent(a)+(A.nome?'&n='+encodeURIComponent(A.nome):'')+(location.search?'&'+location.search.slice(1):'');
+  $('go').href='oferta.html'+qsx; $('go2').href='oferta.html'+qsx;
+  try{sessionStorage.setItem('agro_diag',JSON.stringify({c:A.cultura,a:a,n:A.nome,l:lucro}))}catch(e){}
+  $('sticky').hidden=false;
+  if(window.track) track('Lead',{content_name:'Diagnostico '+(A.cultura||'')});
+}
+})();
+</script>
+<script src="site.js"></script>
+</body>
+</html>
