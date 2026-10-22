@@ -6,7 +6,7 @@ window.AGRO = {
   cupao: "LANCAMENTO15",   // código do cupão criado na Okanda
   modoCheckout: "popup",   // "popup" = abre por cima da página; "pagina" = abre o checkout normalmente
   precos: { normal: 21997, hoje: 7997, desconto: 0.25 },
-  pixel: "",               // ID do Meta Pixel (só carrega se o visitante aceitar cookies)
+  pixel: "1674334114620463",               // ID do Meta Pixel (só carrega se o visitante aceitar cookies)
   suporte: { whatsapp: "244955968159", email: "autotaxapro@bilonai.com" },
   vendedor: "A Bilonai Group"
 };
