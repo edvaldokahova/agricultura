@@ -61,11 +61,11 @@
  <div class="mbox coupon">
   <button class="mx" data-close type="button" aria-label="Fechar">✕</button>
   <span class="ribbon">ESPERE! ÚLTIMA OPORTUNIDADE</span>
-  <h2>Leve a planilha com mais <span style="color:var(--red)">40% de desconto</span></h2>
+  <h2>Leve a planilha com mais <span style="color:var(--red)" id="cpct">15% de desconto</span></h2>
   <p class="muted" style="margin-top:6px">Só nesta página. Se sair, o cupão desaparece.</p>
-  <div class="code" id="ccode">AGRO40</div>
+  <div class="code" id="ccode">LANCAMENTO15</div>
   <div class="p2"><s>7.997 Kz</s> → <b id="cprice">4.798 Kz</b></div>
-  <a class="btn amb" data-checkout="cupao" href="#" style="margin-top:14px">USAR O CUPÃO E COMPRAR<small id="chint">Escreva o código AGRO40 no pagamento</small></a>
+  <a class="btn amb" data-checkout="cupao" href="#" style="margin-top:14px">USAR O CUPÃO E COMPRAR<small id="chint">Escreva o código LANCAMENTO15 no pagamento</small></a>
   <button class="no" data-close type="button">Não, prefiro continuar a fazer as contas de cabeça</button>
  </div>
 </div>
@@ -86,8 +86,9 @@
  document.querySelector('.save').textContent='Poupa '+kz(P.normal-P.hoje)+' enquanto durar o lançamento · pagamento único';
  var cp=Math.round(P.hoje*(1-P.desconto));
  document.getElementById('cprice').textContent=kz(cp);
- document.getElementById('ccode').textContent=C.cupao||'AGRO40';
- document.getElementById('chint').textContent=C.checkoutCupao?'O desconto já vem aplicado':'Escreva o código '+(C.cupao||'AGRO40')+' no pagamento';
+ document.getElementById('cpct').textContent=Math.round(P.desconto*100)+'% de desconto';
+ document.getElementById('ccode').textContent=C.cupao||'LANCAMENTO15';
+ document.getElementById('chint').textContent=C.checkoutCupao?'O desconto já vem aplicado':'Escreva o código '+(C.cupao||'LANCAMENTO15')+' no pagamento';
 })();
 </script>
 <script src="site.js"></script>
