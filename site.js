@@ -4,7 +4,7 @@
   function get(k,s){try{return (s?sessionStorage:localStorage).getItem(k)}catch(e){return null}}
   function set(k,v,s){try{(s?sessionStorage:localStorage).setItem(k,v)}catch(e){}}
   window.kz=function(v){return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' Kz'};
-  // ---------- pixel com consentimento ----------
+  // ---------- pixel ----------
   var Q=[];
   window.track=function(ev,data,custom){ if(window.fbq){ fbq(custom?'trackCustom':'track',ev,data||{}) } else Q.push([ev,data,custom]) };
   function pixel(){
@@ -12,14 +12,15 @@
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init',C.pixel); fbq('track','PageView'); Q.forEach(function(q){fbq(q[2]?'trackCustom':'track',q[0],q[1]||{})}); Q=[];
   }
+  // Carrega o pixel logo à entrada (uso só em Angola); aviso informativo com opção de desactivar.
   var choice=get('agro_cookies');
-  if(choice==='sim') pixel();
-  else if(choice!=='nao' && C.pixel){
+  if(choice!=='nao') pixel();
+  if(!choice && C.pixel){
     var b=document.createElement('div'); b.className='cookie'; b.setAttribute('role','dialog');
-    b.innerHTML='<p>Usamos cookies de medição (Meta) para saber que anúncios funcionam. Só os activamos se aceitar. <a href="privacidade.html">Saber mais</a></p><div><button class="n" type="button">Recusar</button><button class="y" type="button">Aceitar</button></div>';
+    b.innerHTML='<p>Este site usa o Pixel da Meta para medir o desempenho dos anúncios. Ao continuar a navegar, concorda com esta utilização. <a href="privacidade.html">Saber mais</a></p><div><button class="n" type="button">Desactivar</button><button class="y" type="button">Entendi</button></div>';
     document.body.appendChild(b);
-    b.querySelector('.y').onclick=function(){set('agro_cookies','sim');b.remove();pixel()};
-    b.querySelector('.n').onclick=function(){set('agro_cookies','nao');b.remove()};
+    b.querySelector('.y').onclick=function(){set('agro_cookies','sim');b.remove()};
+    b.querySelector('.n').onclick=function(){set('agro_cookies','nao');b.remove();try{if(window.fbq)fbq('consent','revoke')}catch(e){}};
   }
   // ---------- contactos ----------
   document.querySelectorAll('[data-wa]').forEach(function(a){a.href='https://wa.me/'+((C.suporte||{}).whatsapp||'')});
